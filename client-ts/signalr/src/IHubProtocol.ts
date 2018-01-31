@@ -17,13 +17,13 @@ export interface HubMessage {
 export interface InvocationMessage extends HubMessage {
     readonly invocationId?: string;
     readonly target: string;
-    readonly arguments: Array<any>;
+    readonly arguments: any[];
 }
 
 export interface StreamInvocationMessage extends HubMessage {
     readonly invocationId: string;
     readonly target: string;
-    readonly arguments: Array<any>
+    readonly arguments: any[];
 }
 
 export interface ResultMessage extends HubMessage {
@@ -47,7 +47,7 @@ export interface CancelInvocation extends HubMessage {
 
 export const enum ProtocolType {
     Text = 1,
-    Binary
+    Binary,
 }
 
 export interface IHubProtocol {
